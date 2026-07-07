@@ -5,7 +5,6 @@ import { useMapGetter } from 'dashboard/composables/store';
 import { useI18n } from 'vue-i18n';
 import ButtonNext from 'next/button/Button.vue';
 import Icon from 'next/icon/Icon.vue';
-import Logo from 'next/icon/Logo.vue';
 
 import {
   DropdownContainer,
@@ -34,8 +33,11 @@ const showAccountSwitcher = computed(
   () => userAccounts.value.length > 1 && currentAccount.value.name
 );
 const currentAccountLogo = computed(
-  () => currentAccount.value?.custom_logo_url || ''
+  () => currentAccount.value?.custom_logo_url || globalConfig.value?.logo || ''
 );
+
+const getAccountLogo = account =>
+  account.custom_logo_url || globalConfig.value?.logo || '';
 
 const sortedCurrentUserAccounts = computed(() => {
   return [...(currentUser.value.accounts || [])].sort((a, b) =>
@@ -59,15 +61,15 @@ const emitNewAccount = () => {
       <!-- Collapsed view: Logo trigger -->
       <button
         v-if="isCollapsed"
-        class="grid flex-shrink-0 place-content-center p-1 rounded-lg cursor-pointer hover:bg-n-alpha-1"
+        class="grid flex-shrink-0 place-content-center w-12 h-10 p-1 rounded-full cursor-pointer hover:bg-n-alpha-1"
         :class="{ 'bg-n-alpha-1': isOpen }"
         :title="currentAccount.name"
         @click="toggle"
       >
-        <Logo
+        <img
           :src="currentAccountLogo"
           :alt="currentAccount.name"
-          class="size-8 object-contain"
+          class="block max-w-10 max-h-7 object-contain"
         />
       </button>
       <!-- Expanded view: Logo trigger -->
@@ -78,7 +80,7 @@ const emitNewAccount = () => {
         :title="currentAccount.name"
         aria-haspopup="listbox"
         aria-controls="account-options"
-        class="flex items-center justify-between w-full min-h-10 rounded-lg px-2"
+        class="flex items-center justify-between w-full min-h-12 rounded-full px-2"
         :class="[
           isOpen && 'bg-n-alpha-1',
           showAccountSwitcher
@@ -88,13 +90,13 @@ const emitNewAccount = () => {
         @click="() => showAccountSwitcher && toggle()"
       >
         <span
-          class="flex items-center justify-start min-w-0 h-10 flex-1"
+          class="flex items-center justify-start min-w-0 h-12 flex-1"
           aria-live="polite"
         >
-          <Logo
+          <img
             :src="currentAccountLogo"
             :alt="currentAccount.name"
-            class="block max-w-full max-h-8 object-contain"
+            class="block w-auto max-w-[calc(100%-1.5rem)] max-h-9 object-contain"
           />
         </span>
 
@@ -122,10 +124,10 @@ const emitNewAccount = () => {
               :for="account.name"
               class="text-left rtl:text-right flex gap-2 items-center"
             >
-              <Logo
-                :src="account.custom_logo_url"
+              <img
+                :src="getAccountLogo(account)"
                 :alt="account.name"
-                class="size-5 flex-shrink-0 object-contain"
+                class="w-10 h-6 flex-shrink-0 object-contain"
               />
               <span
                 class="text-n-slate-12 max-w-36 truncate min-w-0"

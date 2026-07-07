@@ -3,18 +3,18 @@
   // NEXT COLORS START
   :root {
     // slate
-    --slate-1: 252 252 253;
-    --slate-2: 249 249 251;
-    --slate-3: 240 240 243;
-    --slate-4: 232 232 236;
-    --slate-5: 224 225 230;
-    --slate-6: 217 217 224;
-    --slate-7: 205 206 214;
-    --slate-8: 185 187 198;
-    --slate-9: 139 141 152;
-    --slate-10: 128 131 141;
-    --slate-11: 96 100 108;
-    --slate-12: 28 32 36;
+    --slate-1: 251 250 246;
+    --slate-2: 244 243 236;
+    --slate-3: 238 236 226;
+    --slate-4: 230 227 214;
+    --slate-5: 222 218 200;
+    --slate-6: 212 207 184;
+    --slate-7: 200 194 166;
+    --slate-8: 179 171 134;
+    --slate-9: 154 146 102;
+    --slate-10: 106 101 63;
+    --slate-11: 44 42 24;
+    --slate-12: 32 51 0;
 
     --iris-1: 253 253 255;
     --iris-2: 248 248 255;
@@ -29,18 +29,18 @@
     --iris-11: 87 83 198;
     --iris-12: 39 41 98;
 
-    --blue-1: 251 253 255;
-    --blue-2: 245 249 255;
-    --blue-3: 233 243 255;
-    --blue-4: 218 236 255;
-    --blue-5: 201 226 255;
-    --blue-6: 181 213 255;
-    --blue-7: 155 195 252;
-    --blue-8: 117 171 247;
-    --blue-9: 39 129 246;
-    --blue-10: 16 115 233;
-    --blue-11: 8 109 224;
-    --blue-12: 11 50 101;
+    --blue-1: 251 255 228;
+    --blue-2: 244 255 197;
+    --blue-3: 232 255 146;
+    --blue-4: 213 255 84;
+    --blue-5: 192 250 33;
+    --blue-6: 161 225 1;
+    --blue-7: 124 180 0;
+    --blue-8: 94 137 2;
+    --blue-9: 75 107 9;
+    --blue-10: 63 90 13;
+    --blue-11: 32 51 0;
+    --blue-12: 32 51 0;
 
     --ruby-1: 255 252 253;
     --ruby-2: 255 247 248;
@@ -107,43 +107,43 @@
     --violet-11: 101 85 183;
     --violet-12: 47 38 95;
 
-    --background-color: 247 245 239;
-    --surface-1: 252 250 245;
-    --surface-2: 255 254 250;
+    --background-color: 251 250 246;
+    --surface-1: 244 243 236;
+    --surface-2: 251 250 246;
     --surface-active: 255 254 250;
-    --background-input-box: 15, 23, 42, 0.035;
-    --text-blue: 49 68 0;
+    --background-input-box: 44, 42, 24, 0.04;
+    --text-blue: 32 51 0;
     --text-purple: 2 4 49;
     --text-amber: 37 24 1;
-    --border-container: 231 226 215;
-    --border-strong: 219 213 199;
-    --border-weak: 235 231 222;
-    --border-blue-strong: 112 156 0;
-    --solid-1: 255 254 250;
-    --solid-2: 252 250 245;
-    --solid-3: 248 245 238;
+    --border-container: 222 218 200;
+    --border-strong: 200 194 166;
+    --border-weak: 230 227 214;
+    --border-blue-strong: 124 180 0;
+    --solid-1: 251 250 246;
+    --solid-2: 244 243 236;
+    --solid-3: 238 236 226;
     --solid-active: 255 254 250;
     --solid-amber: 255 228 181;
-    --solid-blue: 234 255 185;
-    --solid-blue-2: 250 255 238;
+    --solid-blue: 192 250 33;
+    --solid-blue-2: 232 255 146;
     --solid-iris: 230 231 255;
     --solid-purple: 230 231 255;
     --solid-red: 254 200 201;
     --solid-amber-button: 255 221 141;
-    --card-color: 255 254 250;
+    --card-color: 251 250 246;
     --overlay: 0, 0, 0, 0.12;
     --overlay-avatar: 255, 255, 255, 0.67;
-    --button-color: 255 254 250;
-    --button-hover-color: 15, 23, 42, 0.05;
-    --label-background: 247 245 239;
-    --label-border: 15, 23, 42, 0.05;
+    --button-color: 192 250 33;
+    --button-hover-color: 213, 255, 84, 0.82;
+    --label-background: 244 243 236;
+    --label-border: 44, 42, 24, 0.08;
 
-    --alpha-1: 217, 210, 196, 0.28;
-    --alpha-2: 173, 164, 145, 0.22;
-    --alpha-3: 255, 254, 250, 0.96;
+    --alpha-1: 230, 227, 214, 0.72;
+    --alpha-2: 222, 218, 200, 0.72;
+    --alpha-3: 251, 250, 246, 0.96;
     --black-alpha-1: 0, 0, 0, 0.12;
     --black-alpha-2: 0, 0, 0, 0.04;
-    --border-blue: 161, 225, 1, 0.55;
+    --border-blue: 124, 180, 0, 0.55;
     --white-alpha: 255, 255, 255, 0.8;
 
     // Voice call widget - light mode
