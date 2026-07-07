@@ -46,7 +46,8 @@ const TREE_CONNECTOR =
       :title="label"
       class="flex h-8 items-center gap-2.5 px-2.5 py-1 rounded-full ltr:hover:bg-gradient-to-r rtl:hover:bg-gradient-to-l from-transparent via-n-slate-3/70 to-n-slate-3/70 group min-w-0 hover:text-n-slate-11"
       :class="{
-        'text-n-blue-11 bg-n-blue-2 active': active,
+        'text-n-slate-11 bg-n-button-color outline outline-1 outline-n-weak active':
+          active,
       }"
     >
       <component
