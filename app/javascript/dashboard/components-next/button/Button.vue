@@ -101,11 +101,11 @@ const STYLE_CONFIG = {
   colors: {
     blue: {
       solid:
-        'bg-n-blue-5 text-n-blue-11 hover:enabled:bg-n-blue-11 hover:enabled:text-n-blue-5 focus-visible:bg-n-blue-11 focus-visible:text-n-blue-5 outline-transparent',
+        'bg-n-blue-5 text-n-blue-11 shadow-sm hover:-translate-y-px hover:enabled:bg-n-blue-11 hover:enabled:text-n-blue-5 hover:shadow-md focus-visible:bg-n-blue-11 focus-visible:text-n-blue-5 outline-transparent',
       faded:
-        'bg-n-blue-2 text-n-blue-11 hover:enabled:bg-n-blue-3 focus-visible:bg-n-blue-3 outline-transparent',
+        'bg-n-button-color text-n-blue-11 outline-n-container hover:enabled:bg-n-button-hover focus-visible:bg-n-button-hover',
       outline:
-        'text-n-blue-11 outline-n-blue-7 hover:enabled:bg-n-blue-2 focus-visible:bg-n-blue-2',
+        'text-n-blue-11 outline-n-container hover:enabled:bg-n-button-hover focus-visible:bg-n-button-hover',
       ghost:
         'text-n-blue-11 hover:enabled:bg-n-alpha-2 focus-visible:bg-n-alpha-2 outline-transparent',
       link: 'text-n-blue-11 hover:enabled:underline focus-visible:underline outline-transparent',
@@ -192,7 +192,7 @@ const STYLE_CONFIG = {
     center: 'justify-center',
     end: 'justify-end',
   },
-  base: 'inline-flex items-center min-w-0 gap-2 font-semibold transition-all duration-100 ease-out border-0 rounded-full outline-1 outline disabled:opacity-50',
+  base: 'inline-flex items-center min-w-0 gap-2 font-semibold transition-all duration-150 ease-out border-0 rounded-full outline-1 outline disabled:opacity-50',
 };
 
 const variantClasses = computed(() => {
