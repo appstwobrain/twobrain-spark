@@ -95,7 +95,7 @@
       "LOGO": {
         "TITLE": "Account logo",
         "CURRENT": "Current logo",
-        "EMPTY": "No logo",
+        "EMPTY": "Using the default TwoBrain logo",
         "HELP": "Shown in the dashboard sidebar for everyone using this account. SVG, PNG, JPG, GIF, and WebP are supported up to 5 MB.",
         "UPLOAD": "Upload logo",
         "REMOVE": "Remove",

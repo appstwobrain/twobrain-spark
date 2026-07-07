@@ -59,6 +59,25 @@
         selectedLocale: '<%= I18n.locale %>'
       }
       window.globalConfig = <%= raw @global_config.to_json %>
+      ;(() => {
+        const cacheVersionKey = 'twobrain-dashboard-cache-version';
+        const nextVersion = window.globalConfig?.GIT_SHA;
+        const previousVersion = window.localStorage?.getItem(cacheVersionKey);
+
+        if (!nextVersion || previousVersion === nextVersion) return;
+
+        try {
+          const dbNames = JSON.parse(window.localStorage.getItem('cw-idb-names') || '[]');
+          dbNames.forEach(dbName => window.indexedDB?.deleteDatabase(dbName));
+          window.localStorage.removeItem('cw-idb-names');
+        } catch {}
+
+        try {
+          window.caches?.keys().then(keys => keys.forEach(key => window.caches.delete(key)));
+        } catch {}
+
+        window.localStorage?.setItem(cacheVersionKey, nextVersion);
+      })();
       window.browserConfig = {
         browser_name: '<%= browser.name %>',
       }
