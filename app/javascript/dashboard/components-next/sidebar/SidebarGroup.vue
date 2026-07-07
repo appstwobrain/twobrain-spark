@@ -265,7 +265,7 @@ watch(
           type="button"
           class="flex items-center justify-center size-10 rounded-full"
           :class="{
-            'text-n-slate-11 bg-n-button-color outline outline-1 outline-n-weak':
+            'text-n-slate-11 bg-n-slate-3 outline outline-1 outline-n-weak':
               isActive || hasActiveChild,
             'text-n-slate-10 hover:text-n-slate-11 hover:bg-n-alpha-1':
               !isActive && !hasActiveChild,
