@@ -871,13 +871,13 @@ const menuItems = computed(() => {
   >
     <section
       class="grid"
-      :class="isEffectivelyCollapsed ? 'mt-3 mb-6 gap-4' : 'mt-1 mb-4 gap-2'"
+      :class="isEffectivelyCollapsed ? 'mt-3 mb-6 gap-4' : 'mt-3 mb-5 gap-3'"
     >
       <div
         class="flex gap-2 items-center min-w-0"
         :class="{
           'justify-center px-1': isEffectivelyCollapsed,
-          'px-2': !isEffectivelyCollapsed,
+          'px-3': !isEffectivelyCollapsed,
         }"
       >
         <template v-if="isEffectivelyCollapsed">
@@ -894,13 +894,13 @@ const menuItems = computed(() => {
         </template>
       </div>
       <div
-        class="flex gap-2"
-        :class="isEffectivelyCollapsed ? 'flex-col items-center' : 'px-2'"
+        class="flex gap-2.5"
+        :class="isEffectivelyCollapsed ? 'flex-col items-center' : 'px-3'"
       >
         <RouterLink
           v-if="!isEffectivelyCollapsed"
           :to="{ name: 'search' }"
-          class="flex gap-2 items-center px-2 py-1 w-full h-7 rounded-lg outline outline-1 outline-n-weak bg-n-button-color transition-all duration-100 ease-out"
+          class="flex gap-2 items-center px-3 py-1 w-full h-8 rounded-full outline outline-1 outline-n-weak bg-n-button-color transition-all duration-100 ease-out hover:bg-n-button-hover"
         >
           <span class="flex-shrink-0 i-lucide-search size-4 text-n-slate-10" />
           <span class="flex-grow text-start text-n-slate-10">
@@ -915,7 +915,7 @@ const menuItems = computed(() => {
         <RouterLink
           v-else
           :to="{ name: 'search' }"
-          class="flex items-center justify-center size-8 rounded-lg outline outline-1 outline-n-weak bg-n-button-color transition-all duration-100 ease-out hover:bg-n-alpha-2 dark:hover:bg-n-slate-9/30"
+          class="flex items-center justify-center size-9 rounded-full outline outline-1 outline-n-weak bg-n-button-color transition-all duration-100 ease-out hover:bg-n-button-hover dark:hover:bg-n-slate-9/30"
           :title="t('COMBOBOX.SEARCH_PLACEHOLDER')"
         >
           <span class="i-lucide-search size-4 text-n-slate-11" />
@@ -929,8 +929,8 @@ const menuItems = computed(() => {
               class="dark:hover:!bg-n-slate-9/30"
               :class="[
                 isEffectivelyCollapsed
-                  ? '!size-8 !outline-n-weak !text-n-slate-11'
-                  : '!h-7 !outline-n-weak !text-n-slate-11',
+                  ? '!size-9 !outline-n-weak !text-n-slate-11'
+                  : '!h-8 !outline-n-weak !text-n-slate-11',
                 { '!bg-n-alpha-2 dark:!bg-n-slate-9/30': isOpen },
               ]"
             />
@@ -939,11 +939,11 @@ const menuItems = computed(() => {
       </div>
     </section>
     <nav
-      class="grid overflow-y-scroll flex-grow gap-2 pb-5 no-scrollbar min-w-0"
-      :class="isEffectivelyCollapsed ? 'px-1' : 'px-2'"
+      class="grid overflow-y-scroll flex-grow gap-3 pb-5 no-scrollbar min-w-0"
+      :class="isEffectivelyCollapsed ? 'px-1' : 'px-3'"
     >
       <ul
-        class="flex flex-col gap-1 m-0 list-none min-w-0"
+        class="flex flex-col gap-1.5 m-0 list-none min-w-0"
         :class="{ 'items-center': isEffectivelyCollapsed }"
       >
         <SidebarGroup

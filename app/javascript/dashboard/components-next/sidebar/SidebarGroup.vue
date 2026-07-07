@@ -249,7 +249,7 @@ watch(
     :permissions="resolvePermissions(to)"
     :feature-flag="resolveFeatureFlag(to)"
     as="li"
-    class="grid gap-1 text-sm cursor-pointer select-none min-w-0"
+    class="grid gap-1.5 text-sm cursor-pointer select-none min-w-0"
   >
     <!-- Collapsed State -->
     <template v-if="isCollapsed">
@@ -263,10 +263,11 @@ watch(
           ref="triggerRef"
           :to="to && !hasChildren ? to : undefined"
           type="button"
-          class="flex items-center justify-center size-10 rounded-lg"
+          class="flex items-center justify-center size-10 rounded-full"
           :class="{
-            'text-n-slate-12 bg-n-alpha-2': isActive || hasActiveChild,
-            'text-n-slate-11 hover:bg-n-alpha-2': !isActive && !hasActiveChild,
+            'text-n-blue-11 bg-n-blue-2': isActive || hasActiveChild,
+            'text-n-slate-10 hover:text-n-slate-11 hover:bg-n-alpha-1':
+              !isActive && !hasActiveChild,
           }"
           :title="label"
           @click="hasChildren ? handleCollapsedClick() : undefined"

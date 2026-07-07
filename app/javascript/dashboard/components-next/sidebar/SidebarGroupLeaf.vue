@@ -33,7 +33,7 @@ const TREE_CONNECTOR =
     :permissions="resolvePermissions(to)"
     :feature-flag="resolveFeatureFlag(to)"
     as="li"
-    class="py-0.5 ps-2 ms-3 relative text-n-slate-11 min-w-0"
+    class="py-1 ps-2 ms-3 relative text-n-slate-10 min-w-0"
     :class="{
       [TREE_CONNECTOR]: !hideTreeLine,
       'before:!w-px last:after:!border-b last:after:!border-s':
@@ -44,9 +44,9 @@ const TREE_CONNECTOR =
       :is="to ? 'router-link' : 'div'"
       :to="to"
       :title="label"
-      class="flex h-8 items-center gap-2 px-2 py-1 rounded-lg ltr:hover:bg-gradient-to-r rtl:hover:bg-gradient-to-l from-transparent via-n-slate-3/70 to-n-slate-3/70 group min-w-0"
+      class="flex h-8 items-center gap-2.5 px-2.5 py-1 rounded-full ltr:hover:bg-gradient-to-r rtl:hover:bg-gradient-to-l from-transparent via-n-slate-3/70 to-n-slate-3/70 group min-w-0 hover:text-n-slate-11"
       :class="{
-        'text-n-slate-12 bg-n-alpha-2 active': active,
+        'text-n-blue-11 bg-n-blue-2 active': active,
       }"
     >
       <component
