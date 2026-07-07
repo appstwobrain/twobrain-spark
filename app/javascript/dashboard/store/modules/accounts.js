@@ -6,6 +6,7 @@ import { differenceInDays } from 'date-fns';
 import EnterpriseAccountAPI from '../../api/enterprise/account';
 import { throwErrorMessage } from '../utils/api';
 import { getLanguageDirection } from 'dashboard/components/widgets/conversation/advancedFilterItems/languages';
+import { applyAccountBranding } from 'dashboard/helper/accountBranding';
 
 const findRecordById = ($state, id) =>
   $state.records.find(record => record.id === Number(id)) || {};
@@ -62,6 +63,7 @@ export const actions = {
     try {
       const response = await AccountAPI.get();
       commit(types.default.ADD_ACCOUNT, response.data);
+      applyAccountBranding(response.data);
     } catch {
       // silent failure
     } finally {
@@ -81,6 +83,7 @@ export const actions = {
       commit(types.default.UPDATE_CURRENT_USER_ACCOUNT, response.data, {
         root: true,
       });
+      applyAccountBranding(response.data);
       commit(types.default.SET_ACCOUNT_UI_FLAG, { isUpdating: false });
     } catch (error) {
       commit(types.default.SET_ACCOUNT_UI_FLAG, { isUpdating: false });
@@ -114,6 +117,7 @@ export const actions = {
       commit(types.default.UPDATE_CURRENT_USER_ACCOUNT, response.data, {
         root: true,
       });
+      applyAccountBranding(response.data);
       commit(types.default.SET_ACCOUNT_UI_FLAG, { isUpdating: false });
     } catch (error) {
       commit(types.default.SET_ACCOUNT_UI_FLAG, { isUpdating: false });

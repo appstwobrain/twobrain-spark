@@ -92,6 +92,44 @@
         "PLACEHOLDER": "E-mail de suporte da sua empresa",
         "ERROR": ""
       },
+      "LOGO": {
+        "TITLE": "Logotipo da conta",
+        "CURRENT": "Logotipo atual",
+        "EMPTY": "Usando o logotipo padrão da TwoBrain",
+        "HELP": "Exibido na sidebar do painel para todos que usam esta conta. SVG, PNG, JPG, GIF e WebP são suportados até 5 MB.",
+        "UPLOAD": "Enviar logotipo",
+        "REMOVE": "Remover",
+        "UPDATE": {
+          "SUCCESS": "Logotipo da conta atualizado com sucesso",
+          "ERROR": "Falha ao atualizar o logotipo da conta"
+        },
+        "DELETE": {
+          "SUCCESS": "Logotipo da conta removido com sucesso",
+          "ERROR": "Falha ao remover o logotipo da conta"
+        }
+      },
+      "BRANDING": {
+        "TITLE": "Identidade visual",
+        "HELP": "Personalize as cores principais desta conta. Esses valores ficam armazenados na conta e são aplicados no painel para todos que trabalham nela.",
+        "PRIMARY_COLOR": "Fundo do botão principal",
+        "PRIMARY_TEXT_COLOR": "Texto do botão principal e hover",
+        "SURFACE_COLOR": "Fundo principal",
+        "SIDEBAR_COLOR": "Fundo da sidebar",
+        "CARD_COLOR": "Cards e campos",
+        "SECONDARY_BUTTON_COLOR": "Fundo do botão secundário",
+        "SECONDARY_BUTTON_HOVER_COLOR": "Hover do botão secundário",
+        "SAVE": "Salvar identidade",
+        "RESET": "Usar padrão Spark",
+        "PREVIEW_TITLE": "Prévia da interface",
+        "PREVIEW_HELP": "Ações principais usam a cor da marca; ações neutras permanecem nos tons Paper.",
+        "PRIMARY_PREVIEW": "Salvar",
+        "SECONDARY_PREVIEW": "Cancelar",
+        "UPDATE": {
+          "SUCCESS": "Identidade visual atualizada com sucesso",
+          "ERROR": "Falha ao atualizar identidade visual",
+          "INVALID": "Use cores hexadecimais válidas, por exemplo #C0FA21"
+        }
+      },
       "AUTO_RESOLVE_IGNORE_WAITING": {
         "LABEL": "Excluir conversas não atendidas",
         "HELP": "Se ativado, o sistema não resolverá conversas que estiverem aguardando a resposta de um atendente."

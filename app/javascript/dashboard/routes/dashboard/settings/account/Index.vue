@@ -15,6 +15,7 @@ import AccountId from './components/AccountId.vue';
 import BuildInfo from './components/BuildInfo.vue';
 import AccountDelete from './components/AccountDelete.vue';
 import AccountLogo from './components/AccountLogo.vue';
+import AccountBranding from './components/AccountBranding.vue';
 import AudioTranscription from './components/AudioTranscription.vue';
 import SectionLayout from './components/SectionLayout.vue';
 
@@ -26,6 +27,7 @@ export default {
     BuildInfo,
     AccountDelete,
     AccountLogo,
+    AccountBranding,
     AudioTranscription,
     SectionLayout,
     WithLabel,
@@ -246,6 +248,7 @@ export default {
           </div>
         </form>
         <AccountLogo v-if="!uiFlags.isFetchingItem" class="mt-6" />
+        <AccountBranding v-if="!uiFlags.isFetchingItem" class="mt-4" />
       </SectionLayout>
 
       <woot-loading-state v-if="uiFlags.isFetchingItem" />

@@ -108,6 +108,28 @@
           "ERROR": "Failed to remove account logo"
         }
       },
+      "BRANDING": {
+        "TITLE": "Visual identity",
+        "HELP": "Customize this account's core colors. These values are stored on the account and applied to the dashboard for everyone working inside it.",
+        "PRIMARY_COLOR": "Primary button background",
+        "PRIMARY_TEXT_COLOR": "Primary button text and hover",
+        "SURFACE_COLOR": "Main background",
+        "SIDEBAR_COLOR": "Sidebar background",
+        "CARD_COLOR": "Cards and fields",
+        "SECONDARY_BUTTON_COLOR": "Secondary button background",
+        "SECONDARY_BUTTON_HOVER_COLOR": "Secondary button hover",
+        "SAVE": "Save identity",
+        "RESET": "Use Spark defaults",
+        "PREVIEW_TITLE": "Interface preview",
+        "PREVIEW_HELP": "Primary actions use the brand color; neutral actions stay in the Paper range.",
+        "PRIMARY_PREVIEW": "Save",
+        "SECONDARY_PREVIEW": "Cancel",
+        "UPDATE": {
+          "SUCCESS": "Visual identity updated successfully",
+          "ERROR": "Failed to update visual identity",
+          "INVALID": "Use valid hexadecimal colors, for example #C0FA21"
+        }
+      },
       "AUTO_RESOLVE_IGNORE_WAITING": {
         "LABEL": "Exclude unattended conversations",
         "HELP": "When enabled, the system will skip resolving conversations that are still waiting for an agent's reply."
