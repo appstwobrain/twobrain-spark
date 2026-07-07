@@ -3,7 +3,8 @@
   <head>
     <% spark_title = 'Spark | TwoBrain' %>
     <% spark_description = 'Spark e o painel de atendimento inteligente da TwoBrain para centralizar conversas, equipes, automacoes e relacionamento com clientes.' %>
-    <% spark_favicon = '/favicon-512x512.png' %>
+    <% spark_asset_version = '9ae584c' %>
+    <% spark_favicon = "/favicon-512x512.png?v=#{spark_asset_version}" %>
     <title>
       <%= spark_title %>
     </title>
@@ -27,23 +28,23 @@
       <% if ENV['IOS_APP_IDENTIFIER'].present? %>
         <meta name="apple-itunes-app" content='app-id=<%= ENV['IOS_APP_IDENTIFIER'] %>'>
       <% end %>
-      <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-      <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-      <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-      <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-      <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-      <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-      <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-      <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-      <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-      <link class="favicon" rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-      <link class="favicon" rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-      <link class="favicon" rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-      <link class="favicon" rel="icon" type="image/svg+xml" href="/brand-assets/twobrain-logo-thumbnail.svg">
-      <link class="favicon" rel="shortcut icon" href="/favicon-32x32.png">
-      <link rel="mask-icon" href="/brand-assets/twobrain-logo-thumbnail.svg" color="#203300">
-      <link rel="manifest" href="/manifest.json">
+      <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png?v=<%= spark_asset_version %>">
+      <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png?v=<%= spark_asset_version %>">
+      <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png?v=<%= spark_asset_version %>">
+      <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png?v=<%= spark_asset_version %>">
+      <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png?v=<%= spark_asset_version %>">
+      <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png?v=<%= spark_asset_version %>">
+      <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png?v=<%= spark_asset_version %>">
+      <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png?v=<%= spark_asset_version %>">
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png?v=<%= spark_asset_version %>">
+      <link class="favicon" rel="icon" type="image/svg+xml" href="/brand-assets/twobrain-logo-thumbnail.svg?v=<%= spark_asset_version %>">
+      <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png?v=<%= spark_asset_version %>">
+      <link class="favicon" rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=<%= spark_asset_version %>">
+      <link class="favicon" rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=<%= spark_asset_version %>">
+      <link class="favicon" rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=<%= spark_asset_version %>">
+      <link class="favicon" rel="shortcut icon" href="/favicon-32x32.png?v=<%= spark_asset_version %>">
+      <link rel="mask-icon" href="/brand-assets/twobrain-logo-thumbnail.svg?v=<%= spark_asset_version %>" color="#203300">
+      <link rel="manifest" href="/manifest.json?v=<%= spark_asset_version %>">
     <% end %>
     <link rel="icon" type="image/png" sizes="512x512" href="<%= spark_favicon %>">
     <%= csrf_meta_tags %>
