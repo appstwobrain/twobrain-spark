@@ -59,7 +59,7 @@ const emitNewAccount = () => {
       <!-- Collapsed view: Logo trigger -->
       <button
         v-if="isCollapsed"
-        class="grid flex-shrink-0 place-content-center p-2 rounded-lg cursor-pointer hover:bg-n-alpha-1"
+        class="grid flex-shrink-0 place-content-center p-1 rounded-lg cursor-pointer hover:bg-n-alpha-1"
         :class="{ 'bg-n-alpha-1': isOpen }"
         :title="currentAccount.name"
         @click="toggle"
@@ -67,7 +67,7 @@ const emitNewAccount = () => {
         <Logo
           :src="currentAccountLogo"
           :alt="currentAccount.name"
-          class="size-7 object-contain"
+          class="size-8 object-contain"
         />
       </button>
       <!-- Expanded view: Logo trigger -->
@@ -78,7 +78,7 @@ const emitNewAccount = () => {
         :title="currentAccount.name"
         aria-haspopup="listbox"
         aria-controls="account-options"
-        class="flex items-center gap-2 justify-between w-full rounded-lg px-2"
+        class="flex items-center justify-between w-full min-h-10 rounded-lg px-2"
         :class="[
           isOpen && 'bg-n-alpha-1',
           showAccountSwitcher
@@ -87,11 +87,14 @@ const emitNewAccount = () => {
         ]"
         @click="() => showAccountSwitcher && toggle()"
       >
-        <span class="flex items-center gap-2 min-w-0" aria-live="polite">
+        <span
+          class="flex items-center justify-start min-w-0 h-10 flex-1"
+          aria-live="polite"
+        >
           <Logo
             :src="currentAccountLogo"
             :alt="currentAccount.name"
-            class="size-7 flex-shrink-0 object-contain"
+            class="block max-w-full max-h-8 object-contain"
           />
         </span>
 
