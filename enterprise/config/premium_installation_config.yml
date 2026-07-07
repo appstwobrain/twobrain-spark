@@ -2,11 +2,11 @@
 - name: INSTALLATION_NAME
   value: 'TwoBrain'
 - name: LOGO_THUMBNAIL
-  value: '/brand-assets/logo_thumbnail.svg'
+  value: '/brand-assets/twobrain-logo-thumbnail.svg'
 - name: LOGO
-  value: '/brand-assets/logo.svg'
+  value: '/brand-assets/twobrain-logo.svg'
 - name: LOGO_DARK
-  value: '/brand-assets/logo_dark.svg'
+  value: '/brand-assets/twobrain-logo-dark.svg'
 - name: BRAND_URL
   value:
 - name: WIDGET_BRAND_URL

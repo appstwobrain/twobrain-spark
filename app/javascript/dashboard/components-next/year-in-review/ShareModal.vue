@@ -31,7 +31,7 @@ const { currentAccount } = useAccount();
 const isGenerating = ref(false);
 const shareImageUrl = ref(null);
 const logoSrc = computed(
-  () => currentAccount.value?.custom_logo_url || '/brand-assets/logo.svg'
+  () => currentAccount.value?.custom_logo_url || '/brand-assets/twobrain-logo.svg'
 );
 
 const generateImage = async () => {
