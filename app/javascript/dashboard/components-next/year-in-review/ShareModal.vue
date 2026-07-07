@@ -1,7 +1,8 @@
 <script setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { toPng } from 'html-to-image';
+import { useAccount } from 'dashboard/composables/useAccount';
 
 const props = defineProps({
   show: {
@@ -25,9 +26,13 @@ const props = defineProps({
 const emit = defineEmits(['close']);
 
 const { t } = useI18n();
+const { currentAccount } = useAccount();
 
 const isGenerating = ref(false);
 const shareImageUrl = ref(null);
+const logoSrc = computed(
+  () => currentAccount.value?.custom_logo_url || '/brand-assets/logo.svg'
+);
 
 const generateImage = async () => {
   if (!props.slideElement) return;
@@ -95,7 +100,7 @@ const generateImage = async () => {
     );
 
     const logo = new Image();
-    logo.src = '/brand-assets/logo.svg';
+    logo.src = logoSrc.value;
     await new Promise(resolve => {
       logo.onload = resolve;
     });

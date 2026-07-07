@@ -78,6 +78,9 @@ export const actions = {
     try {
       const response = await AccountAPI.update('', updateObj);
       commit(types.default.EDIT_ACCOUNT, response.data);
+      commit(types.default.UPDATE_CURRENT_USER_ACCOUNT, response.data, {
+        root: true,
+      });
       commit(types.default.SET_ACCOUNT_UI_FLAG, { isUpdating: false });
     } catch (error) {
       commit(types.default.SET_ACCOUNT_UI_FLAG, { isUpdating: false });
@@ -97,6 +100,20 @@ export const actions = {
     commit(types.default.SET_ACCOUNT_UI_FLAG, { isUpdating: true });
     try {
       await AccountAPI.delete(id);
+      commit(types.default.SET_ACCOUNT_UI_FLAG, { isUpdating: false });
+    } catch (error) {
+      commit(types.default.SET_ACCOUNT_UI_FLAG, { isUpdating: false });
+      throw new Error(error);
+    }
+  },
+  deleteLogo: async ({ commit }) => {
+    commit(types.default.SET_ACCOUNT_UI_FLAG, { isUpdating: true });
+    try {
+      const response = await AccountAPI.deleteLogo();
+      commit(types.default.EDIT_ACCOUNT, response.data);
+      commit(types.default.UPDATE_CURRENT_USER_ACCOUNT, response.data, {
+        root: true,
+      });
       commit(types.default.SET_ACCOUNT_UI_FLAG, { isUpdating: false });
     } catch (error) {
       commit(types.default.SET_ACCOUNT_UI_FLAG, { isUpdating: false });

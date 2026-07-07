@@ -23,6 +23,7 @@
 #
 
 class Account < ApplicationRecord
+  include Rails.application.routes.url_helpers
   # used for single column multi flags
   include FlagShihTzu
   include Reportable
@@ -101,6 +102,8 @@ class Account < ApplicationRecord
   has_many :working_hours, dependent: :destroy_async
 
   has_one_attached :contacts_export
+  has_one_attached :custom_logo
+  validate :acceptable_custom_logo, if: -> { custom_logo.changed? }
 
   enum :locale, LANGUAGES_CONFIG.map { |key, val| [val[:iso_639_1_code], key] }.to_h, prefix: true
   enum :status, { active: 0, suspended: 1 }
@@ -135,6 +138,10 @@ class Account < ApplicationRecord
       id: id,
       name: name
     }
+  end
+
+  def custom_logo_url
+    url_for(custom_logo) if custom_logo.attached?
   end
 
   def inbound_email_domain
@@ -210,6 +217,14 @@ class Account < ApplicationRecord
     errors.add(:support_email, I18n.t('errors.account.support_email.invalid')) if parsed.blank?
   rescue Mail::Field::ParseError, Mail::Field::IncompleteParseError
     errors.add(:support_email, I18n.t('errors.account.support_email.invalid'))
+  end
+
+  def acceptable_custom_logo
+    return unless custom_logo.attached?
+
+    allowed_content_types = %w[image/jpeg image/png image/gif image/webp image/svg+xml]
+    errors.add(:custom_logo, 'is too big') if custom_logo.byte_size > 5.megabytes
+    errors.add(:custom_logo, 'filetype not supported') unless allowed_content_types.include?(custom_logo.content_type)
   end
 
   def remove_account_sequences

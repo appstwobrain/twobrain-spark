@@ -269,6 +269,23 @@ export const mutations = {
       accounts,
     };
   },
+  [types.UPDATE_CURRENT_USER_ACCOUNT](_state, updatedAccount) {
+    const accounts = _state.currentUser.accounts.map(account => {
+      if (account.id === updatedAccount.id) {
+        return {
+          ...account,
+          name: updatedAccount.name,
+          custom_logo_url: updatedAccount.custom_logo_url,
+        };
+      }
+      return account;
+    });
+
+    _state.currentUser = {
+      ..._state.currentUser,
+      accounts,
+    };
+  },
   [types.RESET_ONBOARDING](_state, accountId) {
     const accounts = _state.currentUser.accounts.map(account => {
       if (account.id === accountId) {

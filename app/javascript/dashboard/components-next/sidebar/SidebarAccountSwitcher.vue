@@ -33,6 +33,9 @@ const userAccounts = useMapGetter('getUserAccounts');
 const showAccountSwitcher = computed(
   () => userAccounts.value.length > 1 && currentAccount.value.name
 );
+const currentAccountLogo = computed(
+  () => currentAccount.value?.custom_logo_url || ''
+);
 
 const sortedCurrentUserAccounts = computed(() => {
   return [...(currentUser.value.accounts || [])].sort((a, b) =>
@@ -61,13 +64,18 @@ const emitNewAccount = () => {
         :title="currentAccount.name"
         @click="toggle"
       >
-        <Logo class="size-7" />
+        <Logo
+          :src="currentAccountLogo"
+          :alt="currentAccount.name"
+          class="size-7 object-contain"
+        />
       </button>
-      <!-- Expanded view: Account name trigger -->
+      <!-- Expanded view: Logo trigger -->
       <button
         v-else
         id="sidebar-account-switcher"
         :data-account-id="accountId"
+        :title="currentAccount.name"
         aria-haspopup="listbox"
         aria-controls="account-options"
         class="flex items-center gap-2 justify-between w-full rounded-lg px-2"
@@ -79,11 +87,12 @@ const emitNewAccount = () => {
         ]"
         @click="() => showAccountSwitcher && toggle()"
       >
-        <span
-          class="text-sm font-medium leading-5 text-n-slate-12 truncate"
-          aria-live="polite"
-        >
-          {{ currentAccount.name }}
+        <span class="flex items-center gap-2 min-w-0" aria-live="polite">
+          <Logo
+            :src="currentAccountLogo"
+            :alt="currentAccount.name"
+            class="size-7 flex-shrink-0 object-contain"
+          />
         </span>
 
         <span
@@ -110,6 +119,11 @@ const emitNewAccount = () => {
               :for="account.name"
               class="text-left rtl:text-right flex gap-2 items-center"
             >
+              <Logo
+                :src="account.custom_logo_url"
+                :alt="account.name"
+                class="size-5 flex-shrink-0 object-contain"
+              />
               <span
                 class="text-n-slate-12 max-w-36 truncate min-w-0"
                 :title="account.name"

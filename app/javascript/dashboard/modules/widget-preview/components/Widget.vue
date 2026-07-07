@@ -10,6 +10,7 @@ import Code from 'dashboard/components/Code.vue';
 import Switch from 'dashboard/components-next/switch/Switch.vue';
 import { useBranding } from 'shared/composables/useBranding';
 import { useMapGetter } from 'dashboard/composables/store';
+import { useAccount } from 'dashboard/composables/useAccount';
 
 const props = defineProps({
   welcomeHeading: {
@@ -61,6 +62,7 @@ const props = defineProps({
 const { t } = useI18n();
 const { replaceInstallationName } = useBranding();
 const globalConfig = useMapGetter('globalConfig/get');
+const { currentAccount } = useAccount();
 
 const isChatMode = ref(false);
 const [isWidgetVisible, toggleWidget] = useToggle(true);
@@ -130,6 +132,10 @@ const getBubblePositionStyle = computed(() => ({
 const isBubbleExpanded = computed(
   () => !isWidgetVisible.value && props.widgetBubbleType === 'expanded_bubble'
 );
+const brandingLogo = computed(
+  () =>
+    currentAccount.value?.custom_logo_url || globalConfig.value?.logoThumbnail
+);
 
 const getWidgetBubbleLauncherTitle = computed(() =>
   isWidgetVisible.value || props.widgetBubbleType === 'standard'
@@ -188,7 +194,7 @@ const handleToggleWidget = () => {
               >
                 <img
                   class="max-w-2.5 max-h-2.5"
-                  :src="globalConfig.logoThumbnail"
+                  :src="brandingLogo"
                 />
                 <span>
                   {{
@@ -243,7 +249,7 @@ const handleToggleWidget = () => {
           :script="widgetScript"
           lang="html"
           class="!text-start"
-          :codepen-title="`${websiteName} - Chatwoot Widget Test`"
+          :codepen-title="`${websiteName} - TwoBrain Widget Test`"
           enable-code-pen
         />
       </div>

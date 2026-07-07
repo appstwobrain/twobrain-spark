@@ -1,16 +1,37 @@
 <script setup>
-import { useAttrs } from 'vue';
+import { computed, useAttrs } from 'vue';
 import { useMapGetter } from 'dashboard/composables/store';
+import { useAccount } from 'dashboard/composables/useAccount';
+
+const props = defineProps({
+  src: {
+    type: String,
+    default: '',
+  },
+  alt: {
+    type: String,
+    default: '',
+  },
+});
 
 const attrs = useAttrs();
 const globalConfig = useMapGetter('globalConfig/get');
+const { currentAccount } = useAccount();
+
+const logoSrc = computed(
+  () =>
+    props.src ||
+    currentAccount.value?.custom_logo_url ||
+    globalConfig.value?.logoThumbnail
+);
 </script>
 
 <template>
   <img
-    v-if="globalConfig.logoThumbnail"
+    v-if="logoSrc"
     v-bind="attrs"
-    :src="globalConfig.logoThumbnail"
+    :src="logoSrc"
+    :alt="alt"
   />
   <svg
     v-else

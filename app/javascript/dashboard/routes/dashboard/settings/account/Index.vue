@@ -14,6 +14,7 @@ import NextButton from 'dashboard/components-next/button/Button.vue';
 import AccountId from './components/AccountId.vue';
 import BuildInfo from './components/BuildInfo.vue';
 import AccountDelete from './components/AccountDelete.vue';
+import AccountLogo from './components/AccountLogo.vue';
 import AudioTranscription from './components/AudioTranscription.vue';
 import SectionLayout from './components/SectionLayout.vue';
 
@@ -24,6 +25,7 @@ export default {
     AccountId,
     BuildInfo,
     AccountDelete,
+    AccountLogo,
     AudioTranscription,
     SectionLayout,
     WithLabel,
@@ -243,6 +245,7 @@ export default {
             </NextButton>
           </div>
         </form>
+        <AccountLogo v-if="!uiFlags.isFetchingItem" class="mt-6" />
       </SectionLayout>
 
       <woot-loading-state v-if="uiFlags.isFetchingItem" />

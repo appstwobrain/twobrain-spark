@@ -92,6 +92,22 @@
         "PLACEHOLDER": "Your company's support email",
         "ERROR": ""
       },
+      "LOGO": {
+        "TITLE": "Account logo",
+        "CURRENT": "Current logo",
+        "EMPTY": "No logo",
+        "HELP": "Shown in the dashboard sidebar for everyone using this account. SVG, PNG, JPG, GIF, and WebP are supported up to 5 MB.",
+        "UPLOAD": "Upload logo",
+        "REMOVE": "Remove",
+        "UPDATE": {
+          "SUCCESS": "Account logo updated successfully",
+          "ERROR": "Failed to update account logo"
+        },
+        "DELETE": {
+          "SUCCESS": "Account logo removed successfully",
+          "ERROR": "Failed to remove account logo"
+        }
+      },
       "AUTO_RESOLVE_IGNORE_WAITING": {
         "LABEL": "Exclude unattended conversations",
         "HELP": "When enabled, the system will skip resolving conversations that are still waiting for an agent's reply."
@@ -123,11 +139,11 @@
         "CUSTOM_EMAIL_DOMAIN_ENABLED": "You can receive emails in your custom domain now."
       }
     },
-    "UPDATE_CHATWOOT": "An update {latestChatwootVersion} for Chatwoot is available. Please update your instance.",
+    "UPDATE_CHATWOOT": "An update {latestChatwootVersion} for TwoBrain is available. Please update your instance.",
     "LEARN_MORE": "Learn more",
-    "PAYMENT_PENDING": "Your payment is pending. Please update your payment information to continue using Chatwoot",
-    "UPGRADE": "Upgrade to continue using Chatwoot",
-    "LIMITS_UPGRADE": "Your account has exceeded the usage limits, please upgrade your plan to continue using Chatwoot",
+    "PAYMENT_PENDING": "Your payment is pending. Please update your payment information to continue using TwoBrain",
+    "UPGRADE": "Upgrade to continue using TwoBrain",
+    "LIMITS_UPGRADE": "Your account has exceeded the usage limits, please upgrade your plan to continue using TwoBrain",
     "OPEN_BILLING": "Open billing"
   },
   "FORMS": {
