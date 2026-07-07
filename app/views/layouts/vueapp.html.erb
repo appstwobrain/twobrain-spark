@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <% spark_title = 'Spark | TwoBrain' %>
+    <% spark_description = 'Spark e o painel de atendimento inteligente da TwoBrain para centralizar conversas, equipes, automacoes e relacionamento com clientes.' %>
+    <% spark_favicon = '/favicon-512x512.png' %>
     <title>
-      <%= @global_config['INSTALLATION_NAME'] %>
+      <%= spark_title %>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0"/>
     <% if @global_config['DISPLAY_MANIFEST'] %>
-      <meta name="msapplication-TileColor" content="#0F172A">
+      <meta name="application-name" content="Spark">
+      <meta name="apple-mobile-web-app-title" content="Spark">
+      <meta name="msapplication-TileColor" content="#203300">
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-      <meta name="theme-color" content="#0F172A">
-      <meta name="description" content="<%= @global_config['INSTALLATION_NAME'] %> is a customer support solution that helps companies engage customers over Messenger, Twitter, Telegram, WeChat, Whatsapp. Simply connect your channels and converse with your customers from a single place. Easily add new agents to your system and have them own and resolve conversations with customers. <%= @global_config['INSTALLATION_NAME'] %> also gives you real-time reports to measure your team's performance, canned responses to easily respond to frequently asked questions and private notes for agents to collaborate among themselves.">
+      <meta name="theme-color" content="#203300">
+      <meta name="description" content="<%= spark_description %>">
+      <meta property="og:site_name" content="Spark">
+      <meta property="og:title" content="<%= spark_title %>">
+      <meta property="og:description" content="<%= spark_description %>">
+      <meta property="og:type" content="website">
+      <meta property="og:image" content="<%= spark_favicon %>">
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:title" content="<%= spark_title %>">
+      <meta name="twitter:description" content="<%= spark_description %>">
+      <meta name="twitter:image" content="<%= spark_favicon %>">
       <% if ENV['IOS_APP_IDENTIFIER'].present? %>
         <meta name="apple-itunes-app" content='app-id=<%= ENV['IOS_APP_IDENTIFIER'] %>'>
       <% end %>
@@ -26,9 +40,12 @@
       <link class="favicon" rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
       <link class="favicon" rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
       <link class="favicon" rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link class="favicon" rel="icon" type="image/svg+xml" href="/brand-assets/twobrain-logo-thumbnail.svg">
+      <link class="favicon" rel="shortcut icon" href="/favicon-32x32.png">
+      <link rel="mask-icon" href="/brand-assets/twobrain-logo-thumbnail.svg" color="#203300">
       <link rel="manifest" href="/manifest.json">
     <% end %>
-    <link rel="icon" type="image/png" sizes="512x512" href="<%= @global_config['LOGO_THUMBNAIL'] %>">
+    <link rel="icon" type="image/png" sizes="512x512" href="<%= spark_favicon %>">
     <%= csrf_meta_tags %>
     <script>
       window.chatwootConfig = {
